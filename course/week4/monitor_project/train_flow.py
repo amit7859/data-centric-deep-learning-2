@@ -129,3 +129,5 @@ if __name__ == "__main__":
   You can specify a run id as well.
   """
   flow = TrainClassifier()
+
+ # Use 'python train_flow.py run --config configs/update.json' for Step 4 

@@ -51,6 +51,15 @@ class ProductReviewEmbeddings(Dataset):
     # --
     # Convert tokens to lowercase when updating vocab.
     # ===============================
+
+    for review in self.data.review: 
+      tokens = review.split()
+      for token in tokens:
+        token = token.lower()
+        vocab[token] +=1 
+
+    print("Length of dictionary: " + str(len(vocab)))
+        
     return dict(vocab)
 
   def get_labels(self):
@@ -110,6 +119,13 @@ class ProductReviewStream(Dataset):
     # --
     # vocab: dict[str, int]
     # ===============================
+
+    for review in self.data.review: 
+      tokens = review.split()
+      for token in tokens:
+        token = token.lower()
+        vocab[token] +=1 
+
     return dict(vocab)
 
   def __getitem__(self, index):
